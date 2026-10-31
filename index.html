@@ -106,7 +106,7 @@ xb.onclick=closeM;ov.addEventListener("click",function(e){if(e.target===ov)close
 document.addEventListener("keydown",function(e){if(!ov.classList.contains("show"))return;if(e.key==="Escape")closeM();if(e.key==="Tab"){e.preventDefault();xb.focus()}});
 O.forEach(function(o,i){var b=document.createElement("button");b.className="obj";b.setAttribute("aria-label","Open "+o[2]);
 b.style.cssText="--col:"+o[3]+";--l:"+o[4]+";--t:"+o[5]+";--lm:"+o[6]+";--tm:"+o[7]+";--d:"+(i*.15)+"s";b.innerHTML="<span><b class=\""+IC[o[0]][0]+"\">"+IC[o[0]][1]+"</b>"+o[2]+"</span>";
-b.onclick=function(){if(o[0]==="meta"){location.href="meta-ads-standalone.html"}else if(o[0]==="creative"){location.href="creative-standalone.html"}else{openM(o[0])}};st.appendChild(b)});
+b.onclick=function(){if(o[0]==="meta"){location.href="meta-ads-standalone.html"}else if(o[0]==="google"){location.href="google-ads.html"}else if(o[0]==="creative"){location.href="creative-standalone.html"}else{openM(o[0])}};st.appendChild(b)});
 var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 var D=rm?400:3600,cnt=document.getElementById("cnt"),bar=document.getElementById("bar"),t0=null;
 function tick(n){if(t0===null)t0=n;var p=Math.min((n-t0)/D,1),v=Math.max(1,Math.round((.5-Math.cos(p*Math.PI)/2)*100));cnt.textContent=v;bar.style.width=v+"%";if(p<1)requestAnimationFrame(tick);else finish()}
